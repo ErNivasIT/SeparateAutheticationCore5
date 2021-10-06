@@ -1,0 +1,63 @@
+﻿@model Models.RequestData
+
+@{
+    ViewData["Title"] = "Bulk";
+}
+
+<h1>Bulk</h1>
+
+<h4>AdditionalData</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Bulk" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Data.First_Name" class="control-label"></label>
+                <input asp-for="Data.First_Name" class="form-control" />
+                <span asp-validation-for="Data.First_Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Data.Last_Name" class="control-label"></label>
+                <input asp-for="Data.Last_Name" class="form-control" />
+                <span asp-validation-for="Data.Last_Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Data.Father_Name" class="control-label"></label>
+                <input asp-for="Data.Father_Name" class="form-control" />
+                <span asp-validation-for="Data.Father_Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Data.DOB" class="control-label"></label>
+                <input asp-for="Data.DOB" class="form-control" />
+                <span asp-validation-for="Data.DOB" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Data.Address.Full_Address" class="control-label"></label>
+                <input asp-for="Data.Address.Full_Address" class="form-control" />
+                <span asp-validation-for="Data.Address.Full_Address" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Data.Tags" class="control-label"></label>
+                <input asp-for="Data.Tags" class="form-control" />
+                <span asp-validation-for="Data.Tags" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="oFiles" class="control-label"></label>
+                <input asp-for="oFiles" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
