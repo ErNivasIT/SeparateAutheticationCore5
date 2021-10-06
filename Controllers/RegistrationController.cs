@@ -1,4 +1,5 @@
 ﻿using AppSingleSignOn.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Models;
 using Newtonsoft.Json;
@@ -13,6 +14,7 @@ using System.Threading.Tasks;
 
 namespace AppSingleSignOn.Controllers
 {
+    [Authorize(Roles = "Administrator")]
     public class RegistrationController : Controller
     {
         public IActionResult Index()
